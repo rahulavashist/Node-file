@@ -36,9 +36,6 @@ server.listen(8000,"localhost",()=>console.log("Server is Running on Port 8000")
 
 
 
-
-
-
 //using password validator
 // const PasswordValidator = require("password-validator")
 
@@ -58,7 +55,7 @@ server.listen(8000,"localhost",()=>console.log("Server is Running on Port 8000")
 // console.log(schema.validate("Nitin@123"))
 // console.log(schema.validate("Admin@12345"))
 
-/
+
 
 
 
