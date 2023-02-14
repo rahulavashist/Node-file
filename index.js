@@ -1,23 +1,42 @@
-
-
-
 const http = require("http")
 
 const server = http.createServer((req,res)=>{
     if(req.url==="/")
-    res.end("<h1>This is Home Page</h1>")
-    else if(req.url==="/about")
-    res.end("<h1>This is About Page</h1>")
-    else if(req.url==="/contact")
-    res.end("<h1>This is Contact Page</h1>")
-    else if(req.url==="/profile")
-    res.end("<h1>This is Profile Page</h1>")
+    var data = [
+        {
+            Name:"Rahul Sharma",Profession:"Student",Location:"Haryana",
+            Name:"Rahul Sharma",Profession:"Student",Location:"Haryana",
+            Name:"Rahul Sharma",Profession:"Student",Location:"Haryana",
+            Name:"Rahul Sharma",Profession:"Student",Location:"Haryana",
+        }
+    ]
     else{
         res.writeHead(404)
         res.end("<h1>404!!!Page Not Found</h1>")
     }
 })
 server.listen(8000,"localhost",()=>console.log("Server is Running on Port 8000"))
+
+
+
+
+// const http = require("http")
+
+// const server = http.createServer((req,res)=>{
+//     if(req.url==="/")
+//     res.end("<h1>This is Home Page</h1>")
+//     else if(req.url==="/about")
+//     res.end("<h1>This is About Page</h1>")
+//     else if(req.url==="/contact")
+//     res.end("<h1>This is Contact Page</h1>")
+//     else if(req.url==="/profile")
+//     res.end("<h1>This is Profile Page</h1>")
+//     else{
+//         res.writeHead(404)
+//         res.end("<h1>404!!!Page Not Found</h1>")
+//     }
+// })
+// server.listen(8000,"localhost",()=>console.log("Server is Running on Port 8000"))
 
 
 
