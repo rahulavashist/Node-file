@@ -1,21 +1,47 @@
-const http = require("http")
 
+const http = require("http")
+const fs = require("fs")
 const server = http.createServer((req,res)=>{
-    if(req.url==="/")
-    var data = [
-        {
-            Name:"Rahul Sharma",Profession:"Student",Location:"Haryana",
-            Name:"Rahul Sharma",Profession:"Student",Location:"Haryana",
-            Name:"Rahul Sharma",Profession:"Student",Location:"Haryana",
-            Name:"Rahul Sharma",Profession:"Student",Location:"Haryana",
-        }
-    ]
+    if(req.url==="/"){
+        fs.readFile("./data.json",(error,data)=>{
+            if(error){
+                res.writeHead(500)
+                res.end("Internal Server Error")
+            }
+            else{
+                res.end(data)
+            }
+        })
+    
+ 
+}
     else{
         res.writeHead(404)
         res.end("<h1>404!!!Page Not Found</h1>")
     }
 })
 server.listen(8000,"localhost",()=>console.log("Server is Running on Port 8000"))
+
+
+
+
+
+// const data = require("./data")
+
+// const http = require("http")
+
+// const server = http.createServer((req,res)=>{
+//     if(req.url==="/"){
+//         data.read
+    
+//     res.end(JSON.stringify(data))
+// }
+//     else{
+//         res.writeHead(404)
+//         res.end("<h1>404!!!Page Not Found</h1>")
+//     }
+// })
+// server.listen(8000,"localhost",()=>console.log("Server is Running on Port 8000"))
 
 
 
